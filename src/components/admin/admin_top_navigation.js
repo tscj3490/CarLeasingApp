@@ -13,7 +13,6 @@ import {
   DropdownItem } from 'reactstrap';
 
 import Icon from 'react-icons-kit';
-import Routes from './routes';
 import { Link } from 'react-router-dom';
 import { car } from 'react-icons-kit/fa/car';
 

@@ -12,8 +12,7 @@ class ContactForm extends Component {
     uemail: '',
     uphone: '',
     msg:'',
-
-      isHidden: true,
+    isHidden: true,
     uinterest: '',
     umessage: '',
     followup: false,
@@ -32,9 +31,6 @@ class ContactForm extends Component {
         const name = this.state.uname;
         const email = this.state.uemail;
         const message = this.state.umessage;
-        
-       
-        console.log("Sending", this.state)
         axios({
             method: "POST", 
             url:"https://directmotorgroup.herokuapp.com/send", 
@@ -44,20 +40,18 @@ class ContactForm extends Component {
                 message: message
             }
         }).then((response)=>{
-          console.log(response.data)
             if (response.data.msg === 'success'){
 
-               this.setState({
-     isHidden: !this.state.isHidden
-    }) 
-               
-            }else if(response.data.msg === 'fail'){
+              this.setState({
+                isHidden: !this.state.isHidden
+                }) 
+              } else if(response.data.msg === 'fail'){
                 alert("Message failed to send.")
-            }
-        })
-        .catch(err => {
-          console.log(err)
-        })
+                }
+            })
+            .catch(err => {
+              console.log(err)
+            })
     }
   alertMsgClose = () => {
     this.setState({ alertMsg: false });

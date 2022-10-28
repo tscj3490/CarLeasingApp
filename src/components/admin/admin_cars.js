@@ -35,21 +35,16 @@ CarsRef.on('value', snap => {
 
   render(){
 
-      const { Cars, CarsLoading } = this.state;
-    const orderedcars = Cars;
-      
+    const { Cars, CarsLoading } = this.state;
     let carList;
           
     if (CarsLoading) {
         carList = <div className="TaskList-empty">Loading...</div>; 
-
     } 
      else if (Cars.length) {
         carList = (
             <ul className="TaskList">
               {Cars.map(car => (
-    
-      
               <tr>
                 <th scope="row"></th>
                 <td>{car.year}</td>
@@ -60,21 +55,13 @@ CarsRef.on('value', snap => {
                   <td>{car.ext_color}</td>
                 <td><img src={car.link} height="92" /> </td>
                 <td>{car.price}</td> 
-        
-                <td>
-                 
-          
-                </td>
-                 <td>
-
-                 
-              </td>
-              <Link to={{ pathname:`/admin/editcar/${car.id}`, state: { car } }} >
-               <Icon icon={pencil} />
-              </Link>
+                <td></td>
+                 <td></td>
+                <Link to={{ pathname:`/admin/editcar/${car.id}`, state: { car } }} >
+                <Icon icon={pencil} />
+                </Link>
               </tr>
             ))}
-           
             </ul>
            );
       }

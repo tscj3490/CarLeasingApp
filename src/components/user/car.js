@@ -8,9 +8,7 @@ class Car  extends Component {
   return (
     <div>
         {this.props.car}
-      </div>
-
-       )
+    </div>)
   }
 }
       

@@ -13,10 +13,6 @@ import { Link } from 'react-router-dom';
 
 
 class CarsList extends Component {
-  // ...
-
-
-
   state = {
     Cars: [],
    Carsloading: true
@@ -33,7 +29,7 @@ componentDidMount(){
 
  componentWillMount() { 
 
-CarsRef.on('value', snap => {
+  CarsRef.on('value', snap => {
       const tasks = [];
       let Cars = []
       snap.forEach(shot => {
@@ -47,11 +43,8 @@ CarsRef.on('value', snap => {
 
   render() {
     const { Cars, CarsLoading } = this.state;
-    const orderedcars = Cars;
   
     let carList;
-
-  
     if (CarsLoading) {
       carList = <div className="TaskList-empty">Loading...</div>;
     } else {
