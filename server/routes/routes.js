@@ -12,9 +12,7 @@ var transport = {
     pass: creds.PASS
   }
 }
-
 var transporter = nodemailer.createTransport(transport)
-
 transporter.verify((error, success) => {
   if (error) {
     console.log(error);
@@ -23,7 +21,6 @@ transporter.verify((error, success) => {
   }
 });
 router.post('/api/send', (req, res, next) => {
-  console.log("Request received", req.body)
   var name = req.body.name;
   var email = req.body.email; 
    var message = req.body.message;
@@ -31,13 +28,10 @@ router.post('/api/send', (req, res, next) => {
 
   var mail = {
     from: name,
-    to: 'combatstriker111@gmail.com',  //Change to email address that you want to receive messages on
+    to: 'combatstriker111@gmail.com',  
     subject: 'New Message from Contact Form',
     text: content
   }
-    console.log(name);
-    console.log(email);
-    console.log(content);
   transporter.sendMail(mail, (err, data) => {
     if (err) {
       res.json({
@@ -54,7 +48,6 @@ router.post('/api/send', (req, res, next) => {
 if (process.env.NODE_ENV === 'production') {
     // Serve any static files
     app.use(express.static(path.join(__dirname, 'client/build')));
-    // Handle React routing, return all requests to React app
     app.get('*', function(req, res) {
         res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     });
