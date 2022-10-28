@@ -43,7 +43,6 @@ class EditCar extends Component{
 
 editcar = (e) => {
 
-
     e.preventDefault();
       alert(this.props.match.params.carid);
   const NewCar= {
@@ -59,8 +58,8 @@ editcar = (e) => {
       seat: this.state.seat, 
       price: this.state.price,
       sale: this.state.sale,
-ext_color: this.state.ext_color,
-            checked: false,
+      ext_color: this.state.ext_color,
+      checked: false,
       starred: false,
       timestamp: timeRef
 
@@ -70,20 +69,19 @@ ext_color: this.state.ext_color,
 
 
     this.setState({ body_type: ''});
-      this.setState({ wiper: ''});
-      this.setState({ make: ''});   
-      this.setState({link:''});
-       this.setState({ headlight: '' });
-       this.setState({price: ''});
-       this.setState({transmission: ''});
-       this.setState({engine: ''});
-          this.setState({vin: ''});
-            this.setState({ext_color: ''});
-            this.setState({id: ''});
-            this.setState({sale: ''});
-
-                this.props.history.push('/admin');
-    }
+    this.setState({ wiper: ''});
+    this.setState({ make: ''});   
+    this.setState({link:''});
+    this.setState({ headlight: '' });
+    this.setState({price: ''});
+    this.setState({transmission: ''});
+    this.setState({engine: ''});
+    this.setState({vin: ''});
+    this.setState({ext_color: ''});
+    this.setState({id: ''});
+    this.setState({sale: ''});
+    this.props.history.push('/admin');
+  }
 
   componentDidMount(){
     alert('ddlL');
@@ -103,7 +101,7 @@ ext_color: this.state.ext_color,
  
     return(
 
-          <div className="container">
+      <div className="container">
         <br/>
         <div className="card border-primary mb-3">
           <div className="card-header text-white bg-primary">ADD NEW CAR</div>

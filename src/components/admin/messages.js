@@ -33,7 +33,6 @@ class Messages extends Component {
   }
 
   handleDelete = (id) => {
-    console.log("id is: ", id);
     this.props.deleteMsg(id);
     this.props.history.push('/admin/messages');
   }

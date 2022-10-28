@@ -54,7 +54,6 @@ class TotalInventory extends Component{
                 Van: {van.length}
               </Col>
               <Col md="6">
-
               </Col>
             </Row>
           </div>

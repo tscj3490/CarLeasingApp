@@ -5,8 +5,6 @@ import { Row, Col } from 'reactstrap';
 
 class TotalMessage extends Component{
   render(){
-    console.log('message: ', this.props.messages);
-
     let potentialBuyers = this.props.messages ? this.props.messages.map(message => {
       return(
         <Link to={`/admin/messages/`}>
